@@ -1,0 +1,31 @@
+def invertito(n):
+    b = [0]* len(n)
+    for i in range(len(n)):
+        b[i] = n[len(n) - 1 - i]
+    return b
+   
+def binario(n):
+    c = n
+    i = 0
+    b = [0] * 8
+    while c > 0:
+        b[i] = c % 2
+        c = c / 2
+        i = i + 1
+    return invertito(b)
+
+def somma_bin(a, b):
+		c = a + b
+		d = [0] * 8
+		i = 0
+    while c > 0:
+        b[i] = c % 2
+        c = c / 2
+        i = i + 1
+    return invertito(d)
+    
+def bin_deci(n):
+    c = invertito(n)
+    d = [c[i] * (2 ** i) for i in range(len(c))]
+    return sum(d)
+   
